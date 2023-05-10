@@ -35,7 +35,7 @@ const SearchFeed = () => {
         >
         Search results for : <span style={{color: '#F31503'}}> {searchTerm} </span>
       </Typography>
-      <Videos videos={videos} />
+      <Videos videos={videos} justifyContent="center" />
     </Box>
   )
 }

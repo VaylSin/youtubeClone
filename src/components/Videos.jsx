@@ -1,12 +1,15 @@
 import { InsertEmoticon } from '@mui/icons-material'
-import { Box, Stack } from '@mui/material'
+import { Box, CircularProgress, Stack } from '@mui/material'
 import React from 'react'
 import {ChannelCard,VideoCard} from './'
 
 
-const Videos = ({videos}) => {
+const Videos = ({videos, direction, justifyContent}) => {
+
+  if(!videos?.length) return <CircularProgress />;
+  
   return (
-    <Stack direction='row' flexWrap="wrap" justifyContent="start" gap={2}>
+    <Stack direction={direction || 'row'} flexWrap="wrap" justifyContent={ justifyContent || "start"} gap={2}>
         {videos.map((video, index) =>(
             <Box key={index}>
                 { video.id.videoId && <VideoCard video={video} /> }
